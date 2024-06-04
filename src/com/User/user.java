@@ -3,10 +3,13 @@ package com.User;
 public class user implements Comparable<user>{
     private String Username;
     private String Password;
-    user(String username,String password)
+    public user(String username,String password)
     {
         this.Username=username;
         this.Password=password;
+    }
+    public user()
+    {
     }
     public void setUsername(String username) {
         Username = username;

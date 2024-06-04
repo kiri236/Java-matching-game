@@ -19,6 +19,10 @@ public class Userdata {
         l[1]=0;
 
     }
+    public user get_info(int k)
+    {
+        return users[k];
+    }
     public boolean empty()
     {
         return size==0;
@@ -37,6 +41,7 @@ public class Userdata {
         add(user1,l[1]);
     }
     public int find(user user1) {
+        if(empty())return -1;
         for (int i = r[0]; i != 1; i = r[i])
         {
             if(users[i].equals(user1))
