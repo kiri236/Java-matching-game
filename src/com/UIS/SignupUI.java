@@ -132,6 +132,7 @@ public class SignupUI extends UI{
                 Stage warning_stage = new Stage();
                 warning_stage.setTitle("Success");
                 Label warning = new Label("Sign up successfully");
+                LoginUI.userdata.finish();
                 warning.setTextFill(Color.DARKBLUE);
                 warning.setFont(Font.font("Franklin Gothic Demi", FontWeight.MEDIUM, 16));
                 HBox warning_box = getHBox(Pos.CENTER, warning);
@@ -150,11 +151,7 @@ public class SignupUI extends UI{
                     warning_stage.close();
                 }));
                 timeline.play();
-                Timeline timeline1 = new Timeline(new KeyFrame(Duration.seconds(5), event ->
-                {
-                    this.close();
-                }));
-                timeline1.play();
+
             }else
             {
                 warning("This user has already existed");
@@ -173,4 +170,6 @@ public class SignupUI extends UI{
             }
         }
     }
+
+
 }

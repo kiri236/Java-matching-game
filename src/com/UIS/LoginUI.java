@@ -22,13 +22,13 @@ import com.User.Userdata;
 import java.io.FileInputStream;
 
 public class LoginUI extends UI{
-
+    private user user;
     private int flag = 0;
     public static Userdata userdata;
     protected  boolean check_password(int k ,String password)
     {
-        user user = userdata.get_info(k);
-        return user.getPassword().equals(password);
+        user user1 = userdata.get_info(k);
+        return user1.getPassword().equals(password);
     }
 
     public int getFlag() {
@@ -43,6 +43,7 @@ public class LoginUI extends UI{
 
     @Override
     public void start(final Stage primaryStage) throws Exception {
+
 
         primaryStage.setTitle("Login");
         Image image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\bg_00000.png"));
@@ -78,17 +79,17 @@ public class LoginUI extends UI{
 
         login.setOnAction(e->
         {
-
             boolean success = Login(UsernameInput, passwordField);
-
             if(this.flag==1)
             {
-                Main_UI mainUi = new Main_UI();
+                Main_UI mainUi = new Main_UI(user);
+
                 try {
                     mainUi.start(new Stage());
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
+
                 primaryStage.close();
             }
         });
@@ -97,6 +98,7 @@ public class LoginUI extends UI{
         {
             try {
                 signupUI.start();
+                user = signupUI.getUser1();
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
@@ -127,12 +129,13 @@ public class LoginUI extends UI{
             }
             if(this.flag==1)
             {
-                Main_UI mainUi = new Main_UI();
+                Main_UI mainUi = new Main_UI(user);
                 try {
                     mainUi.start(new Stage());
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
+                primaryStage.close();
             }
         });
         primaryStage.setScene(scene);
@@ -153,6 +156,7 @@ public class LoginUI extends UI{
             } else {
                 if (check_password(k, password1)) {
                     flag = 1;
+                    user = new user(username,password1);
                 } else {
                     warning("Wrong password");
                 }
