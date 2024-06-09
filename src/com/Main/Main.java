@@ -2,7 +2,6 @@ package com.Main;
 
 import com.UIS.LoginUI;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.stage.Stage;
 
 public class Main extends Application {
