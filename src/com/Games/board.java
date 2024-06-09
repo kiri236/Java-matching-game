@@ -23,6 +23,9 @@ import java.util.Arrays;
 
 public class board {
     private int size;
+    private String[] pathnames = new String[]{"D:\\IDEASPACE\\Project1\\icons\\chara_icon_18.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_16.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_20.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_19.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_17.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_26.png",
+            "D:\\IDEASPACE\\Project1\\icons\\chara_icon_28.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_29.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_6.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_7.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_8.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_9.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_10.png",
+            "D:\\IDEASPACE\\Project1\\icons\\chara_icon_37.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_38.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_39.png"};
     private int totalTime;
 
     private Button reset;
@@ -147,6 +150,7 @@ public class board {
         timeline.getKeyFrames().add(
                 new KeyFrame(Duration.seconds(1), e -> {
                     if (score >= getSize() * getSize() / 2) {
+                        System.out.println("ok");
                         setFinished(true);
                         timeline.stop();
                         gridPane.getChildren().clear();
@@ -381,58 +385,10 @@ public class board {
                 Button button = new Button();
                 button.setStyle("-fx-background-color: rgba(255,255,255,0);" + "-fx-min-width: 40;" + "-fx-min-height: 40;");
                 Image image = null;
-                if (g[i][j] % 8 == 0) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_18.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                } else if (g[i][j] % 8 == 1) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_16.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 8 == 2) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_20.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 8 == 3) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_19.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 8 == 4) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_17.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 8 == 5) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_26.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                } else if (g[i][j] % 8 == 6) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_28.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                } else if (g[i][j] % 8 == 7) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_29.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-
+                try {
+                    image = new Image(new FileInputStream(pathnames[g[i][j]%getSize()]));
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
                 }
                 ImageView imageView = new ImageView(image);
                 imageView.setFitWidth(30);
@@ -462,105 +418,10 @@ public class board {
                 button.setStyle("-fx-background-color: rgb(0,0,0,0)");
 
                 Image image = null;
-                if (g[i][j] % 16 == 0) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_18.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                } else if (g[i][j] % 16 == 1) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_16.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 2) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_20.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 3) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_19.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 4) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_17.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 5) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_26.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                } else if (g[i][j] % 16 == 6) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_28.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                } else if (g[i][j] % 16 == 7) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_29.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 8) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_6.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 9) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_7.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 10) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_8.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 11) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_10.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 12) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_9.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 13) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_37.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 14) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_38.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else if (g[i][j] % 16 == 15) {
-                    try {
-                        image = new Image(new FileInputStream("D:\\IDEASPACE\\Project1\\icons\\chara_icon_39.png"));
-                    } catch (FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
+                try {
+                    image = new Image(new FileInputStream(pathnames[g[i][j]%getSize()]));
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
                 }
                 ImageView imageView = new ImageView(image);
                 imageView.setFitWidth(23);
