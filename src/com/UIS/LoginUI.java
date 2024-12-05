@@ -31,9 +31,6 @@ public class LoginUI extends UI {
         return user1.getPassword().equals(password);
     }
 
-    public int getFlag() {
-        return flag;
-    }
 
     protected void userdata_Init() {
         userdata = new Userdata();

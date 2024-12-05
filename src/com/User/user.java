@@ -43,7 +43,4 @@ public class user implements Comparable<user> {
         return this.getUsername().equals(other.getUsername());
     }
 
-    public boolean Password_Match(String password) {
-        return this.getPassword().equals(password);
-    }
 }

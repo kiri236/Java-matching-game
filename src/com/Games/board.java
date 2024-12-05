@@ -23,7 +23,7 @@ import java.util.Arrays;
 
 public class board {
     private int size;
-    private String[] pathnames = new String[]{"D:\\IDEASPACE\\Project1\\icons\\chara_icon_18.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_16.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_20.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_19.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_17.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_26.png",
+    private final String[] pathnames = new String[]{"D:\\IDEASPACE\\Project1\\icons\\chara_icon_18.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_16.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_20.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_19.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_17.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_26.png",
             "D:\\IDEASPACE\\Project1\\icons\\chara_icon_28.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_29.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_6.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_7.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_8.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_9.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_10.png",
             "D:\\IDEASPACE\\Project1\\icons\\chara_icon_37.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_38.png","D:\\IDEASPACE\\Project1\\icons\\chara_icon_39.png"};
     private int totalTime;
